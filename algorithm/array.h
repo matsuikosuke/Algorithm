@@ -13,6 +13,7 @@ public:
 public:
     int length;
     array(int len);
+    array(int len, T init);
     virtual ~array();
 
     T& operator[](int i) {
@@ -35,6 +36,15 @@ template<class T>
 array<T>::array(int len) {
     length = len;
     a = new T[length];
+}
+
+
+template<class T>
+array<T>::array(int len, T init) {
+    length = len;
+    a = new T[length];
+    for (int i = 0; i < length; i++)
+        a[i] = init;
 }
 
 
