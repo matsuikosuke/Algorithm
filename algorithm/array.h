@@ -21,7 +21,6 @@ public:
         return a[i];
     }
 
-
     array<T>& operator=(array<T> &b) {
         if (a != NULL) delete[] a;
         a = b.a;
