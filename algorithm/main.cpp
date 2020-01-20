@@ -4,6 +4,20 @@
 #include "ArrayStack.h"
 
 
+void show_ArrayStack(ArrayStack<std::string> &array_stack) { //参照渡しにしないと本関数を実行終了時にデストラクタが呼ばれてarray_stackが廃棄されてしまいエラーを起こす
+    std::cout << "ArrayStackTest[" << array_stack.length() << "]= ";
+    for (int i = 0; i < array_stack.length(); i++) {
+        if (!array_stack.get(i).empty()) {
+            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
+            printf("%s", array_stack.get(i).c_str());
+        }
+        else {
+            printf("*");
+        }
+    }
+    std::cout << ": n = " << array_stack.size() << std::endl;
+}
+
 int main() {
     // chap2:arrayクラスのテスト
     std::cout << std::endl;
@@ -45,17 +59,7 @@ int main() {
 
 
     ArrayStack<std::string> ArrayStackTest(6);
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
 
     /*for (int i = 0; i < 4; i++) {
@@ -66,163 +70,43 @@ int main() {
     ArrayStackTest.set(1, "r");
     ArrayStackTest.set(2, "e");
     ArrayStackTest.set(3, "d");
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.add(2, "e");
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.add(5, "r");
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.add(5, "e");
-    std::cout << "ArrayStackTest[" << ArrayStackTest .length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
     
     ArrayStackTest.remove(4);
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.remove(4);
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.remove(4);
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.set(2, "i");
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
 
     ArrayStackTest.add(2, "s");
     ArrayStackTest.add(2, "s");
     ArrayStackTest.add(2, "s");
     ArrayStackTest.add(2, "s");
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
 
     ArrayStackTest.remove(7);
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.add(7,"z");
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 
     ArrayStackTest.remove(1);
-    std::cout << "ArrayStackTest[" << ArrayStackTest.length() << "]= ";
-    for (int i = 0; i < ArrayStackTest.length(); i++) {
-        if (!ArrayStackTest.get(i).empty()) {
-            //std::cout << "ArrayStackTest[" << i << "] = " << ArrayStackTest.get(i) << std::endl;
-            printf("%s", ArrayStackTest.get(i).c_str());
-        }
-        else {
-            printf("*");
-        }
-    }
-    std::cout << ": n = " << ArrayStackTest.size() << std::endl;
+    show_ArrayStack(ArrayStackTest);
 }
