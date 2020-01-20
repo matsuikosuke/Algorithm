@@ -2,6 +2,7 @@
 #include <iostream>
 #include "array.h"
 #include "ArrayStack.h"
+#include "ArrayQueue.h"
 
 
 void show_ArrayStack(ArrayStack<std::string> &array_stack) { //QÆ“n‚µ‚É‚µ‚È‚¢‚Æ–{ŠÖ”‚ğÀsI—¹‚ÉƒfƒXƒgƒ‰ƒNƒ^‚ªŒÄ‚Î‚ê‚Äarray_stack‚ª”pŠü‚³‚ê‚Ä‚µ‚Ü‚¢ƒGƒ‰[‚ğ‹N‚±‚·
@@ -17,6 +18,21 @@ void show_ArrayStack(ArrayStack<std::string> &array_stack) { //QÆ“n‚µ‚É‚µ‚È‚¢‚
     }
     std::cout << ": n = " << array_stack.size() << std::endl;
 }
+
+void show_ArrayQueue(ArrayQueue<std::string> &array_queue) { //QÆ“n‚µ‚É‚µ‚È‚¢‚Æ–{ŠÖ”‚ğÀsI—¹‚ÉƒfƒXƒgƒ‰ƒNƒ^‚ªŒÄ‚Î‚ê‚Äarray_stack‚ª”pŠü‚³‚ê‚Ä‚µ‚Ü‚¢ƒGƒ‰[‚ğ‹N‚±‚·
+    std::cout << "ArrayQueueTest[" << array_queue.length() << "]= ";
+    for (int i = 0; i < array_queue.length(); i++) {
+        if (!array_queue.get(i).empty()) {
+            printf("%s", array_queue.get(i).c_str());
+        }
+        else {
+            printf("*");
+        }
+    }
+    std::cout << ": j = " << array_queue.index() <<  ", n = " << array_queue.size() << std::endl;
+}
+
+
 
 int main() {
     // chap2:arrayƒNƒ‰ƒX‚ÌƒeƒXƒg
@@ -109,4 +125,43 @@ int main() {
 
     ArrayStackTest.remove(1);
     show_ArrayStack(ArrayStackTest);
+
+    // chap2.2:ArrayQueueƒNƒ‰ƒX‚ÌƒeƒXƒg
+    std::cout << std::endl;
+    std::cout << "chap2.2:ArrayQueue" << std::endl;
+
+
+
+    ArrayQueue<std::string> ArrayQueueTest(6);
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.add("a");
+    ArrayQueueTest.add("a");
+    ArrayQueueTest.add("a");
+    ArrayQueueTest.add("b");
+    ArrayQueueTest.add("c");
+    ArrayQueueTest.remove();
+    ArrayQueueTest.remove();
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.add("d");
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.add("e");
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.remove();
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.add("f");
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.add("g");
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.add("h");
+    show_ArrayQueue(ArrayQueueTest);
+
+    ArrayQueueTest.remove();
+    show_ArrayQueue(ArrayQueueTest);
 }
