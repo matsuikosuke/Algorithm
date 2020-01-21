@@ -3,6 +3,7 @@
 #include "array.h"
 #include "ArrayStack.h"
 #include "ArrayQueue.h"
+#include "ArrayDeque.h"
 
 
 void show_ArrayStack(ArrayStack<std::string> &array_stack) { //QÆ“n‚µ‚É‚µ‚È‚¢‚Æ–{ŠÖ”‚ğÀsI—¹‚ÉƒfƒXƒgƒ‰ƒNƒ^‚ªŒÄ‚Î‚ê‚Äarray_stack‚ª”pŠü‚³‚ê‚Ä‚µ‚Ü‚¢ƒGƒ‰[‚ğ‹N‚±‚·
@@ -32,6 +33,20 @@ void show_ArrayQueue(ArrayQueue<std::string> &array_queue) { //QÆ“n‚µ‚É‚µ‚È‚¢‚
     std::cout << ": j = " << array_queue.index() <<  ", n = " << array_queue.size() << std::endl;
 }
 
+
+
+void show_ArrayDeque(ArrayDeque<std::string> &array_deque) { //QÆ“n‚µ‚É‚µ‚È‚¢‚Æ–{ŠÖ”‚ğÀsI—¹‚ÉƒfƒXƒgƒ‰ƒNƒ^‚ªŒÄ‚Î‚ê‚Äarray_stack‚ª”pŠü‚³‚ê‚Ä‚µ‚Ü‚¢ƒGƒ‰[‚ğ‹N‚±‚·
+    std::cout << "ArrayDequeTest[" << array_deque.length() << "]= ";
+    for (int i = 0; i < array_deque.length(); i++) {
+        if (!array_deque.get(i).empty()) {
+            printf("%s", array_deque.get(i).c_str());
+        }
+        else {
+            printf("*");
+        }
+    }
+    std::cout << ": j = " << array_deque.index() << ", n = " << array_deque.size() << std::endl;
+}
 
 
 int main() {
@@ -164,4 +179,35 @@ int main() {
 
     ArrayQueueTest.remove();
     show_ArrayQueue(ArrayQueueTest);
+
+
+    // chap2.3:ArrayDequeƒNƒ‰ƒX‚ÌƒeƒXƒg
+    std::cout << std::endl;
+    std::cout << "chap2.3:ArrayDeque" << std::endl;
+
+    ArrayDeque<std::string> ArrayDequeTest(12);
+    show_ArrayDeque(ArrayDequeTest);
+
+    ArrayDequeTest.set(0, "a");
+    ArrayDequeTest.set(1, "b");
+    ArrayDequeTest.set(2, "c");
+    ArrayDequeTest.set(3, "d");
+    ArrayDequeTest.set(4, "e");
+    ArrayDequeTest.set(5, "f");
+    ArrayDequeTest.set(6, "g");
+    ArrayDequeTest.set(7, "h");
+    show_ArrayDeque(ArrayDequeTest);
+
+    ArrayDequeTest.remove(2);
+    show_ArrayDeque(ArrayDequeTest);
+    
+    ArrayDequeTest.add(4, "x");
+    show_ArrayDeque(ArrayDequeTest);
+
+    ArrayDequeTest.add(3, "y");
+    show_ArrayDeque(ArrayDequeTest);
+
+    ArrayDequeTest.add(3, "z");
+    show_ArrayDeque(ArrayDequeTest);
+
 }
