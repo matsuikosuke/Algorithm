@@ -4,6 +4,7 @@
 #include "ArrayStack.h"
 #include "ArrayQueue.h"
 #include "ArrayDeque.h"
+#include "SLList.h"
 
 
 void show_ArrayStack(ArrayStack<std::string> &array_stack) { //参照渡しにしないと本関数を実行終了時にデストラクタが呼ばれてarray_stackが廃棄されてしまいエラーを起こす
@@ -210,4 +211,35 @@ int main() {
     ArrayDequeTest.add(3, "z");
     show_ArrayDeque(ArrayDequeTest);
 
+
+    // chap3.1:SLListクラスのテスト
+    std::cout << std::endl;
+    std::cout << "chap3.1:SLList" << std::endl;
+
+
+    SLList<std::string> SLListTest;
+    SLListTest.add("a");
+    SLListTest.add("b");
+    SLListTest.add("c");
+    SLListTest.add("d");
+    SLListTest.add("e");
+    SLListTest.print_value();
+    SLListTest.print_value(0);
+    SLListTest.print_value(1);
+    SLListTest.print_value(2);
+    SLListTest.print_value(3);
+    SLListTest.print_value(4);
+    SLListTest.print_value(5);
+
+    SLListTest.add("x");
+    SLListTest.print_value();
+
+    SLListTest.remove();
+    SLListTest.print_value();
+
+    SLListTest.pop();
+    SLListTest.print_value();
+    
+    SLListTest.push("y");
+    SLListTest.print_value();
 }
