@@ -5,6 +5,7 @@
 #include "ArrayQueue.h"
 #include "ArrayDeque.h"
 #include "SLList.h"
+#include "DLList.h"
 
 
 void show_ArrayStack(ArrayStack<std::string> &array_stack) { //参照渡しにしないと本関数を実行終了時にデストラクタが呼ばれてarray_stackが廃棄されてしまいエラーを起こす
@@ -242,4 +243,47 @@ int main() {
     
     SLListTest.push("y");
     SLListTest.print_value();
+
+    // chap3.2:DLListクラスのテスト
+    std::cout << std::endl;
+    std::cout << "chap3.2:DLList" << std::endl;
+
+
+    DLList<std::string> DLListTest;
+    DLListTest.dummy_address();
+    DLListTest.node_address(0);
+
+    DLListTest.add(0, "a");
+    DLListTest.add(1, "b");
+    DLListTest.add(2, "c");
+    DLListTest.add(3, "d");
+    DLListTest.add(4, "e");
+
+    for (int i=0; i < DLListTest.size(); i++) {
+        printf("%s, ", DLListTest.get(i).c_str());
+        DLListTest.node_address(i);
+    }
+
+    DLListTest.dummy_address();
+
+    DLListTest.print_value();
+
+
+    DLListTest.add(3, "x");
+    DLListTest.print_value();
+
+    DLListTest.remove(3);
+    DLListTest.print_value();
+
+    DLListTest.add(0, "y");
+    DLListTest.print_value();
+
+    DLListTest.remove(0);
+    DLListTest.print_value();
+
+    DLListTest.add(DLListTest.size(), "z");
+    DLListTest.print_value();
+
+    DLListTest.remove(DLListTest.size()-1);
+    DLListTest.print_value();
 }

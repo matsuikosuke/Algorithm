@@ -10,6 +10,7 @@ protected:
     public:
         T x;
         Node *next;
+        //Push時の新ノード作成用コンストラクタ
         Node(T x0) {
             x = x0;
             next = NULL;
