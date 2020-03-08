@@ -126,6 +126,7 @@
     <ClCompile Include="array.cpp" />
     <ClCompile Include="ArrayQueue.cpp" />
     <ClCompile Include="ArrayStack.cpp" />
+    <ClCompile Include="ChainedHashTable.cpp" />
     <ClCompile Include="DLList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ArrayDeque.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="ArrayDeque.h" />
     <ClInclude Include="ArrayQueue.h" />
     <ClInclude Include="ArrayStack.h" />
+    <ClInclude Include="ChainedHashTable.h" />
     <ClInclude Include="DLList.h" />
     <ClInclude Include="SLList.h" />
   </ItemGroup>

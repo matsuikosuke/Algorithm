@@ -6,6 +6,7 @@
 #include "ArrayDeque.h"
 #include "SLList.h"
 #include "DLList.h"
+#include "ChainedHashTable.h"
 
 
 void show_ArrayStack(ArrayStack<std::string> &array_stack) { //参照渡しにしないと本関数を実行終了時にデストラクタが呼ばれてarray_stackが廃棄されてしまいエラーを起こす
